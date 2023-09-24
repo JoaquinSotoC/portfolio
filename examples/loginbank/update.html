@@ -1,0 +1,128 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+// Include config file
+require_once "config.php";
+
+$id = $_GET["id"];
+echo $id;
+              $conexion = new mysqli("localhost","id20740173_usuario","jMJHC34r_NFB4Q\V","id20740173_based");
+              $sql = $conexion->query("SELECT * FROM clientes WHERE id='$id'");
+              
+              if ($datos = $sql->fetch_object()) {
+                $nombre = $datos->nombre;
+                $apellido= $datos->apellido;
+                $correo = $datos->correo;
+                $estado = $datos->estado;
+                $curp= $datos->curp;
+                $telefono = $datos->telefono;
+                $clave = $datos->clave;
+                $priv = $datos->priv;
+              }
+
+
+
+
+
+if (isset($_POST["mod"])) {
+    
+    $nombre = $_POST["name"];
+    $apellido = $_POST["apellido"];
+    $curp = $_POST["curp"];
+    $telefono = $_POST["telefono"];
+    $estado = $_POST["estado"];
+    $email = $_POST["correo"];
+    $pass= $_POST["clave"];
+    $priv = $_POST["privilegio"];
+
+
+    if (empty($_POST["name"]) || empty($_POST["apellido"]) || empty($_POST["curp"]) || empty($_POST["telefono"]) || empty($_POST["estado"])  || empty($_POST["correo"]) || empty($_POST["clave"]) || empty($_POST["privilegio"]) ) {
+        echo '<div><font color="red"><center>Favor de llenar todos los campos.</center></font></div>';
+    } else {
+             $sql = $conexion->query("update clientes set nombre=('$nombre') where id=('$id') ");
+            $sql = $conexion->query("update clientes set apellido=('$apellido') where id=('$id') ");
+            $sql = $conexion->query("update clientes set curp=('$curp') where id=('$id') ");
+            $sql = $conexion->query("update clientes set telefono=('$telefono') where id=('$id') ");
+            $sql = $conexion->query("update clientes set estado=('$estado') where id=('$id') ");
+            $sql = $conexion->query("update clientes set correo=('$email') where id=('$id') ");
+            $sql = $conexion->query("update clientes set clave=('$pass') where id=('$id') ");
+            $sql = $conexion->query("update clientes set priv=('$priv') where id=('$id') ");
+            
+            echo '<div><font color="green"><center>Usuario modificado con éxito!</center></font></div>';
+    
+
+}
+}
+
+
+
+?>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar cliente</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .wrapper{
+            width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="post">	
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                <h2 class="mt-5">Actualizar cliente</h2>
+                    <p>Modificar los datos que necesites cambiar del usuario seleccionado.</p>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        
+                    <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" name="name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $nombre; ?>">
+                            <span class="invalid-feedback"><?php echo $name_err;?></span>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>Apellidos</label>
+                            <input type="text" name="apellido" class="form-control" value="<?php echo $apellido; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Curp</label>
+                            <input type="text" name="curp" class="form-control" value="<?php echo $curp; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefono</label>
+                            <input type="text" name="telefono" class="form-control" value="<?php echo $telefono; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Estado</label>
+                            <input type="text" name="estado" class="form-control" value="<?php echo $estado; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Correo</label>
+                            <input type="text" name="correo" class="form-control" value="<?php echo $correo; ?>">
+                        </div>
+                        <div class="form-group" >
+                            <label>Contraseña</label>
+                            <input type="text" name="clave" class="form-control" data-validate="Introduce una contraseña" value="<?php echo $clave; ?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Privilegios (admin o cliente)</label>
+                            <input type="text" name="privilegio" class="form-control" value="<?php echo $priv; ?>">
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Modificar" name="mod">
+                        <a href="tablasuper.php" class="btn btn-secondary ml-2">Cancelar</a>
+
+                        <br><br><br>
+                    </form>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+</html>

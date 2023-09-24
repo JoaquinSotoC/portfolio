@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+<title>AquaxControl/Inicio sesion y registro </title>
+
+<head>
+  <meta charset="UTF-8">
+  <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+  <link rel="stylesheet" href="estilo.css">
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/img/drop.png">
+</head>
+
+<body>
+  <form method="post" action="">
+    <div class="container">
+      <input type="checkbox" id="flip">
+      <div class="cover">
+        <div class="front">
+          <img src="agua.jpg" alt="">
+          <div class="text">
+            <span class="text-1"><br> </span>
+            <span class="text-2"></span>
+          </div>
+        </div>
+        <div class="back">
+          <img class="backImg" src="agua2.jpeg" alt="">
+
+        </div>
+      </div>
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <center>
+              <div class="title">
+                <h2>AquaxControl</h2>
+              </div>
+            </center>
+            <div class="title">Iniciar sesion</div>
+
+            <form action="#">
+
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input id=correo name=correo type="text" placeholder="Correo electronico" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input id="input" class=input name="password" type="password" placeholder="Contraseña" required>
+                </div>
+                <div class="text"><a href="#">
+                  </a></div>
+                <div class="button input-box">
+                  <input type="submit" value="Iniciar sesion" name="btningresar">
+            </form>
+
+          </div>
+          <div class="text sign-up-text">Aun no te unes? <label for="flip">Registrarse</label></div>
+        </div>
+  </form>
+  </div>
+  <div class="signup-form">
+    <div class="title">Registrarse</div>
+    <form method="post" action="">
+
+      <div class="input-boxes">
+        <div class="input-box">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Nombre" required name=nombrer>
+        </div>
+        <div class="input-box">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Apellidos" required name=apellidosr>
+        </div>
+        <div class="input-box">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Correo electronico" pattern=".+@gmail.com" required name=correor>
+        </div>
+        <div class="input-box">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Contraseña" name=claver required>
+        </div>
+        <div class="button input-box">
+          <input type="submit" value="registrarse" name="registrar" />
+        </div>
+        <div class="text sign-up-text">ya tienes una cuenta? <label for="flip">Iniciar sesion</label></div>
+      </div>
+    </form>
+  </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+<style>
+  .alertaincorrecto {
+    justify-content: center;
+    width: 100%;
+    height: 25%;
+    background-color: rgb(247, 171, 175);
+    border-style: solid;
+    border-width: normal;
+    border-color: rgb(255, 0, 16);
+    border-radius: 10px;
+  }
+  .alertareg {
+    justify-content: center;
+    width: 100%;
+    height: 25%;
+    background-color: rgb(115, 240, 101);
+    border-style: solid;
+    border-width: normal;
+    border-color: rgb(20, 89, 12);
+    border-radius: 10px;
+  }
+
+
+
+
+</style>
+
+
+</html>

@@ -1,0 +1,248 @@
+<?php
+session_start();
+if (empty($_SESSION["iden"])) {
+    header("location: index.php");
+}
+
+?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaxControl </title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- MORRIS CHART STYLES-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="shortcut icon" href="assets/img/drop.png">
+</head>
+
+
+<form method="post" action="#">
+
+    <body>
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">AquaxControl</a>
+                </div>
+                <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;"> &nbsp; <a 
+                        class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
+            </nav>
+            <!-- /. NAV TOP  -->
+            <nav class="navbar-default navbar-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+                        <li class="text-center">
+                            <img src="aquaicono.png" class="user-image img-responsive" />
+                        </li>
+
+                        <li>
+                            <a  href="Menu.html"><i class="fa fa-dashboard fa-3x"></i> Menu de
+                                control</a>
+                        </li>
+                        <li>
+                            <a class="active-menu" href="historiales.html"><i class="fa fa-table fa-3x"></i>
+                                Historiales</a>
+                        </li>
+                        <li>
+                            <a href="config.html"><i class="fa fa-desktop fa-3x"></i> Enlace a dispositivo</a>
+                        </li>
+                        <li>
+                            <a href="info.html"><i class="fa fa-square-o fa-3x"></i> Informacion y noticias</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </nav>
+            
+            <!-- /. NAV SIDE  -->
+            <div id="page-wrapper">
+                <div id="page-inner">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Historiales</h2>
+                            <h5>
+                                Bienvenido!
+                                <?php
+                                echo $_SESSION["nom"];
+                                ?>
+                                Aqui encontraras los historiales de todos los datos medidos por el sistema.
+                            </h5>
+
+                        </div>
+                    </div>
+                    <!-- /. ROW  -->
+                    <hr />
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Advanced Tables -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Historial de consumo por dia
+                                </div>
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover"
+                                            id="dataTables-example">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>consumo</th>
+                                                    <th>Monto</th>
+                                                </tr>
+                                            </thead>
+                                             <tbody>
+                                           <?php 
+$conexion=new mysqli("localhost","u298241502_joaquin","7V:Yqe[F","u298241502_aquaxcontrol","3306");
+
+$serialsql=$_SESSION['serialsql'];
+if($serialsql=="12k54k12h5j"){
+    $historial="historialpordia";
+}else{
+    $historial="historialpordiavacio";
+}
+
+		$sql="SELECT * from ($historial)";
+		$result=mysqli_query($conexion,$sql);
+                                            while($mostrar=mysqli_fetch_array($result)){
+                                                		 ?>
+                                                <tr class="odd gradeX">
+                                                    <td><?php echo $mostrar['fecha'] ?></td>
+                                                    <td><?php echo round($mostrar['consumo'],3) ?> M<sup>3</sup></td>
+                                                    <td class="center"><?php echo round($mostrar['dinero'],3) ?> MXN </td>
+                                                </tr>
+                                                	<?php 
+	}
+	 ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                              
+                            </div>
+                            
+                            <!--End Advanced Tables -->
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Historial de consumo por mes
+                                </div>
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover"
+                                            id="dataTables-example2">
+                                            <thead>
+                                                <tr>
+                                                    <th>mes</th>
+                                                    <th>consumo</th>
+                                                    <th>Monto</th>
+                                                </tr>
+                                            </thead>
+                                             <tbody>
+                                           <?php 
+
+
+$serialsql=$_SESSION['serialsql'];
+if($serialsql=="12k54k12h5j"){
+    $historial="historialpormes";
+}else{
+    $historial="historialpormesvacio";
+}
+
+		$sql="SELECT * from ($historial)";
+		$result=mysqli_query($conexion,$sql);
+                                            while($mostrar=mysqli_fetch_array($result)){
+                                                		 ?>
+                                                <tr class="odd gradeX">
+                                                    <td><?php echo $mostrar['mes'] ?></td>
+                                                    <td><?php echo round($mostrar['consumo'],3) ?> M<sup>3</sup></td>
+                                                    <td class="center"><?php echo round($mostrar['costo'],3)?> MXN</td>
+                                                </tr>
+                                                	<?php 
+	}
+	 ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                              
+                            </div>
+                    <!-- /. ROW  -->
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                    <!-- /. ROW  -->
+                </div>
+
+            </div>
+            
+            <!-- /. PAGE INNER  -->
+        </div>
+        
+        <!-- /. PAGE WRAPPER  -->
+        <!-- /. WRAPPER  -->
+        <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+        <!-- JQUERY SCRIPTS -->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+        <!-- BOOTSTRAP SCRIPTS -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- METISMENU SCRIPTS -->
+        <script src="assets/js/jquery.metisMenu.js"></script>
+        <!-- DATA TABLE SCRIPTS -->
+        <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+        <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+                $('#dataTables-example2').dataTable();
+            });
+        </script>
+        <!-- CUSTOM SCRIPTS -->
+        <script src="assets/js/custom.js"></script>
+
+
+    </body>
+
+    <footer>
+        <center>
+            <h4>
+                <font color="black">AUTOMAT</font>
+                <font color="red">IoT</font>
+                <font color="black">®</font>
+            </h4>
+            <img src="assets/img/Automatiot.jpeg" class="user-image img-responsive" />
+            <h6>
+                2023
+            </h6>
+        </center>
+    </footer>
+
+</html>

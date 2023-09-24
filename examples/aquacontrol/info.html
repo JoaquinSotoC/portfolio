@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaxControl </title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- MORRIS CHART STYLES-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLES-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="shortcut icon" href="assets/img/drop.png">
+</head>
+
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">AquaxControl</a>
+            </div>
+            <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;"> &nbsp; <a class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center">
+                        <img src="aquaicono.png" class="user-image img-responsive" />
+                    </li>
+
+                    <li>
+                        <a  href="Menu.html"><i class="fa fa-dashboard fa-3x"></i> Menu de
+                            control</a>
+                    </li>
+                    <li>
+                        <a  href="historiales.html"><i class="fa fa-table fa-3x"></i>
+                            Historiales</a>
+                    </li>
+                    <li>
+                        <a href="config.html"><i class="fa fa-desktop fa-3x"></i> Enlace a dispositivo</a>
+                    </li>
+                    <li>
+                        <a class="active-menu" href="info.html"><i class="fa fa-square-o fa-3x"></i> Informacion y noticias</a>
+                    </li>
+                </ul>
+
+            </div>
+<style>
+                        .recuadro2 {
+                            background-color: rgb(244, 244, 244);
+                            width: 100%;
+                            margin: auto;
+                            border-style: solid;
+                            border-width: normal;
+                            border-color: rgb(219, 227, 227);
+
+
+                        }
+                        .heighttext{
+  height:30px
+}
+
+</style>
+
+
+        </nav>
+
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Informacion y noticias</h2>
+                        <h5>
+                            Bienvenido!
+                            <?php
+                            echo $_SESSION["nom"];
+                            ?>
+                            Aqui encontraras informacion y noticias mas importantes de la semana!
+                        </h5>
+
+                    </div>
+                </div>
+                
+                <!-- /. ROW  -->
+                <hr />
+                
+                 <div class="recuadro2">
+
+                            <div class="row">
+                                <center>
+                                    <h2>
+                                            Descargar el manual de usuario Aquaxcontrol
+                                        </h2><br>
+                                </center>
+                            </div>
+                            <div class="horizontal">
+                                <center>
+
+<a type="button" class="btn btn-danger btn-lg" value="Descargar Manual de usuario .PDF " name="descargarpdfmanual" href="/portfolio/examples/aquacontrol/Manual de usuario Aquaxcontrol.pdf">Descargar Manual de usuario .PDF</a>
+                                </center>
+                            </div><br>
+                        </div>
+                        <br>
+                        <div class="recuadro2">
+
+                            <div class="row">
+                                <center>
+                                    <h2>
+                                            Descargar el datasheet
+                                        </h2><br>
+                                </center>
+                            </div>
+                            <div class="horizontal">
+                                <center>
+
+<a type="button" class="btn btn-warning btn-lg" value="Descargar datasheet .PDF " name="descargarapp" href="/portfolio/examples/aquacontrol/DATA SHEET JPA-023-EH.pdf">Descargar datasheet .PDF</a>
+                                </center><br>
+                            </div><br>
+                        </div>
+                        <br>
+                <div class="chat-panel panel panel-default chat-boder chat-panel-head">
+                    
+                    <div class="panel-heading">
+                        <i class="title"></i>
+                        <h1><b>
+                                <center>Noticias del mundo</center>
+                            </b></h1>
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                            <ul class="dropdown-menu slidedown">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-refresh fa-fw"></i>Actualizar...
+                                    </a>
+                                </li>
+
+                            </ul>
+ </div>
+                        </div>
+                        <div class="panel">
+                            <li class="left clearfix">
+                                <span class="chat-img pull-left">
+                                    <strong>
+                                        <h1><a href="https://www.elsoldecuautla.com.mx/local/en-fugas-se-pierde-30-del-agua-potable-9758595.html"
+                                                target="_blank">En fugas se pierde 30% del agua potable
+                                    </strong>
+                                    <p>
+                                        <font color="black">
+                                            <p style="text-align: justify;">
+                                                Alrededor de un 30 por ciento del agua que extrae Cuautla se pierde por
+                                                fugas, derivado de las malas condiciones de la tubería que tiene más de
+                                                70 años de antigüedad, reconoció el director del Sistema Operador de
+                                                Agua Potable y Saneamiento de Cuautla (SOAPSC), Juan Carlos Flores
+                                                Morales.
+                                        </font color="black">
+                                    </p>
+                                    <img src="https://www.elsoldecuautla.com.mx/local/jv4jec-fugas-de-agua-cuautla.jpg/alternates/LANDSCAPE_768/fugas-de-agua-cuautla.JPG"
+                                        alt="User" width=200px height=200px />
+                                </span>
+                                <div class="chat-body">
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i>12 mins ago
+                                    </small>
+
+                                </div>
+                            </li>
+                            <li class="left clearfix">
+                                <span class="chat-img pull-left">
+                                    <strong>
+                                        <h1><a href="https://www.diariodequeretaro.com.mx/cultura/teatro/hasta-la-ultima-gota-busca-crear-conciencia-sobre-el-cuidado-del-agua-9749492.html"
+                                                target="_blank">“Hasta la última gota” busca crear conciencia sobre el
+                                                cuidado del agua
+                                    </strong>
+                                    <p>
+                                        <font color="black">
+                                            <p style="text-align: justify;">
+                                                El teatro científico ha regresado al foro de La Gaviota Teatro con una
+                                                obra de títeres y actores que busca crear conciencia sobre el cuidado
+                                                del agua. Se trata de “Hasta la última gota”, un proyecto escénico de
+                                                esta compañía que nació en 2017 con la colaboración del Centro de
+                                                Ingeniería y Desarrollo Social (CIDESI) y el Consejo de Ciencia y
+                                                Tecnología del Estado de Querétaro (Concyteq).
+                                        </font color="black">
+                                    </p>
+                                    <img src="https://www.diariodequeretaro.com.mx/incoming/7rkyuf-la-gaviota.jfif/alternates/LANDSCAPE_768/La%20Gaviota.jfif"
+                                        alt="User" width=200px height=200px />
+                                </span>
+                                <div class="chat-body">
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i>50 mins ago
+                                    </small>
+
+                                </div>
+                            </li>
+                            <li class="left clearfix">
+                                <span class="chat-img pull-left">
+                                    <strong>
+                                        <h1><a href="https://www.elheraldodechihuahua.com.mx/local/chihuahua/le-apuestan-legisladores-a-implementar-tecnologias-para-el-cuidado-del-agua-9675726.html"
+                                                target="_blank">Le apuestan legisladores a implementar tecnologías para
+                                                el cuidado del agua
+                                    </strong>
+                                    <p>
+                                        <font color="black">
+                                            <p style="text-align: justify;">
+
+
+                                                El diputado local por el Distrito 20, Luis Aguilar, resaltó la
+                                                importancia de encontrar y concretar soluciones a las diversas
+                                                problemáticas hídricas que se registran y afectan la entidad.
+
+                                                Lo anterior lo expuso dentro del marco de la Décimo Séptima Reunión
+                                                Ordinaria de la Comisión de Recursos Hidráulicos que se efectuó en días
+                                                pasados.
+
+                                        </font color="black">
+                                    </p>
+                                    <img src="https://www.elheraldodechihuahua.com.mx/incoming/bdva2o-reunion-cuidado-del-agua/alternates/LANDSCAPE_768/reuni%C3%B3n%20cuidado%20del%20agua"
+                                        alt="User" width=200px height=200px />
+                                </span>
+                                <div class="chat-body">
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i>58 mins ago
+                                    </small>
+
+                                </div>
+                            </li>
+                            <li class="left clearfix">
+                                <span class="chat-img pull-left">
+                                    <strong>
+                                        <h1><a href="https://www.elheraldodechihuahua.com.mx/cultura/arrancan-programa-de-cultura-del-agua-en-el-museo-semilla-9618681.html"
+                                                target="_blank">
+                                                Arrancan programa de Cultura del Agua en el Museo Semilla
+                                    </strong>
+                                    <p>
+                                        <font color="black">
+                                            <p style="text-align: justify;">
+                                                Con la finalidad de promover el cuidado del recurso hídrico dio inicio
+                                                el programa Cultura del Agua que incluye talleres interactivos para
+                                                estudiantes de nivel básico.
+                                                Las instalaciones del Museo Semilla fueron el escenario para el inicio
+                                                de actividades del programa que implementa la Junta Central de Agua y
+                                                Saneamiento (JCAS) y por la Junta Municipal de Agua y Saneamiento
+                                                (JMAS).
+                                        </font color="black">
+                                    </p>
+                                    <img src="https://www.elheraldodechihuahua.com.mx/incoming/3hldji-dia-del-agua/alternates/LANDSCAPE_768/d%C3%ADa%20del%20agua"
+                                        alt="User" width=200px height=200px />
+                                </span>
+                                <div class="chat-body">
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i>1 hora ago
+                                    </small>
+
+                                </div>
+                            </li>
+                            <li class="left clearfix">
+                                <span class="chat-img pull-left">
+                                    <strong>
+                                        <h1><a href="https://noticias.entrerios.gov.ar/notas/organizan-actividades-por-el-da-mundial-de-los-ros-vivos.htm"
+                                                target="_blank">Organizan actividades por el Día Mundial de los Ríos
+                                                Vivos
+                                    </strong>
+                                    <p>
+                                        <font color="black">
+                                            <p style="text-align: justify;">
+                                                Este 14 de marzo, se conmemora el Día Mundial de los Ríos Libres, en
+
+                                                defensa de la libertad de los ríos, la salud de esos ecosistemas y la
+                                                biodiversidad. Además, se dará inició a la agenda de actividades
+                                                propuestas por el Programa Provincial de Cultura del Agua, que impulsa
+                                                la Vicegobernación.
+                                        </font color="black">
+                                    </p>
+                                    <img src="https://cdn.noticiasgob.com.ar/fotos-crop/2023/03/13/p_1678742216.jpg"
+                                        alt="User" width=200px height=200px />
+                                </span>
+                                <div class="chat-body">
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i>1 dia ago
+                                    </small>
+
+                                </div>
+                                </href>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+<div class="recuadro2">
+    <form method="post">
+     <div class="row"><center>
+         <h3><b>¿Quejas o dudas? ¡Mándanos un correo!</b></h3><br>
+         <textarea name="textarea" style="width:350px;height:150px;" ></textarea>
+
+         <br><br>
+         <input  class="btn btn-danger btn-lg" value="Borrar" name="borrarmensaje" >
+         <input  class="btn btn-info btn-lg" value="Enviar" name="correodudas"  >
+         
+         <?php
+         if (isset($_POST['correodudas'])) {
+             $_SESSION['mensaje']=$_POST['textarea'];
+             include("correodudas.php");
+         }
+         ?>
+         <br>
+         <br>
+         </center>
+         </div>
+</div>
+<br>
+<div class="recuadro2">
+
+                            <div class="row">
+                                <center>
+                                    <h2><b>
+                                            Soporte tecnico e informacion de contacto
+                                        </b></h2>
+                                </center>
+                            </div>
+                            <div class="horizontal">
+                                <center>
+<h5>Numero de teléfono (Solo llamadas): 639-233-16-30</h5>
+<h5>Correo electrónico: aquaxcontrol@gmail.com</h5>
+<h5>Horario de atención: Lunes a viernes de 8 A.M. a 8 P.M.</h5>
+                                </center><br>
+                            </div><br>
+                        </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+    </div>
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+
+</body>
+
+<footer>
+    <center>
+        <h4>
+            <font color="black">AUTOMAT</font>
+            <font color="red">IoT</font>
+            <font color="black">®</font>
+        </h4>
+        <img src="assets/img/Automatiot.jpeg" class="user-image img-responsive" />
+        <h6>
+            2023
+        </h6>
+    </center>
+</footer>
+
+</html>
